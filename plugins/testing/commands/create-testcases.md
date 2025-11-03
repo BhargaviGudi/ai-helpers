@@ -241,6 +241,8 @@ The command is designed for:
 
    This context will be used to generate accurate, repository-specific test cases.
 
+   **IMPORTANT**: Do NOT ask for user confirmation after gathering context. Proceed directly to Step 4 (Generate Comprehensive Test Cases) using the gathered context.
+
 4. **Generate Comprehensive Test Cases**:
 
    **IMPORTANT**: Use the context gathered in Step 3 to create relevant, repository-specific test cases.
