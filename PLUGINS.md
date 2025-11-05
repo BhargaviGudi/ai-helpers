@@ -178,7 +178,7 @@ See [plugins/session/README.md](plugins/session/README.md) for detailed document
 Comprehensive test case generation and QA automation tools
 
 **Commands:**
-- **`/testing:create-testcases` `<feature_name> [--priority high|medium|low] [--component name] [--format markdown|docx]`** - Generate comprehensive test cases for a feature with priority filtering and multiple output formats
+- **`/testing:generate-test-case-doc` `<feature_name> [--priority high|medium|low] [--component name] [--format markdown|docx]`** - Generate comprehensive test cases for a feature with priority filtering and multiple output formats
 
 See [plugins/testing/README.md](plugins/testing/README.md) for detailed documentation.
 

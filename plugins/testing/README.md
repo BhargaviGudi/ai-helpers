@@ -8,13 +8,13 @@ The Testing plugin provides powerful commands to automate the creation of detail
 
 ## Commands
 
-### `/testing:create-testcases`
+### `/testing:generate-test-case-doc`
 
 Generate comprehensive test cases for a feature with priority filtering and multiple output formats.
 
 **Synopsis:**
 ```
-/testing:create-testcases <feature_name> [--priority high|medium|low] [--component name] [--format markdown|docx]
+/testing:generate-test-case-doc <feature_name> [--priority high|medium|low] [--component name] [--format markdown|docx]
 ```
 
 **Description:**
@@ -49,14 +49,14 @@ Each test case includes:
 
 Generate all test cases for a feature:
 ```bash
-/testing:create-testcases "User Authentication with OAuth2"
+/testing:generate-test-case-doc "User Authentication with OAuth2"
 ```
 
 **Advanced Usage:**
 
 High-priority test cases only, with component tagging, in DOCX format:
 ```bash
-/testing:create-testcases "Payment Processing" --priority high --component payment,security --format docx
+/testing:generate-test-case-doc "Payment Processing" --priority high --component payment,security --format docx
 ```
 
 **Options:**
@@ -92,27 +92,27 @@ The document includes:
 
 1. **Basic feature test cases**:
    ```bash
-   /testing:create-testcases "Shopping Cart Updates"
+   /testing:generate-test-case-doc "Shopping Cart Updates"
    ```
 
 2. **High-priority smoke tests**:
    ```bash
-   /testing:create-testcases "API Gateway" --priority high
+   /testing:generate-test-case-doc "API Gateway" --priority high
    ```
 
 3. **Component-specific tests**:
    ```bash
-   /testing:create-testcases "User Profile Management" --component profile,api
+   /testing:generate-test-case-doc "User Profile Management" --component profile,api
    ```
 
 4. **Professional DOCX for stakeholders**:
    ```bash
-   /testing:create-testcases "Payment Integration" --format docx
+   /testing:generate-test-case-doc "Payment Integration" --format docx
    ```
 
 5. **Critical security tests**:
    ```bash
-   /testing:create-testcases "OAuth2 Implementation" --priority high --component auth,security --format docx
+   /testing:generate-test-case-doc "OAuth2 Implementation" --priority high --component auth,security --format docx
    ```
 
 ## Installation
