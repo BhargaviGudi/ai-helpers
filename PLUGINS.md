@@ -33,8 +33,11 @@ See [plugins/agendas/README.md](plugins/agendas/README.md) for detailed document
 Miscellaenous tools for working with OpenShift CI
 
 **Commands:**
+- **`/ci:add-debug-wait` `<workflow-or-job-name>`** - Add a wait step to a CI workflow for debugging test failures
 - **`/ci:ask-sippy` `[question]`** - Ask the Sippy AI agent questions about OpenShift CI payloads, jobs, and test results
+- **`/ci:list-unstable-tests` `<version> <keywords> [sippy-url]`** - List unstable tests with pass rate below 95%
 - **`/ci:query-job-status` `<execution-id>`** - Query the status of a gangway job execution by ID
+- **`/ci:query-test-result` `<version> <keywords> [sippy-url]`** - Query test results from Sippy by version and test keywords
 - **`/ci:trigger-periodic` `<job-name> [ENV_VAR=value ...]`** - Trigger a periodic gangway job with optional environment variable overrides
 - **`/ci:trigger-postsubmit` `<job-name> <org> <repo> <base-ref> <base-sha> [ENV_VAR=value ...]`** - Trigger a postsubmit gangway job with repository refs
 - **`/ci:trigger-presubmit` `<job-name> <org> <repo> <base-ref> <base-sha> <pr-number> <pr-sha> [ENV_VAR=value ...]`** - Trigger a presubmit gangway job (typically use GitHub Prow commands instead)
@@ -96,6 +99,7 @@ See [plugins/hello-world/README.md](plugins/hello-world/README.md) for detailed 
 A plugin to automate tasks with Jira
 
 **Commands:**
+- **`/jira:create-release-note` `<issue-key>`** - Generate bug fix release notes from Jira tickets and linked GitHub PRs
 - **`/jira:create` `<type> [project-key] <summary> [--component <name>] [--version <version>] [--parent <key>]`** - Create Jira issues (story, epic, feature, task, bug) with proper formatting
 - **`/jira:generate-test-plan` `[JIRA issue key] [GitHub PR URLs]`** - Generate test steps for a JIRA issue
 - **`/jira:grooming` `[project-filter] [time-period] [--component component-name] [--label label-name]`** - Analyze new bugs and cards added over a time period and generate grooming meeting agenda
@@ -110,6 +114,7 @@ A plugin to analyze and report on must-gather data
 
 **Commands:**
 - **`/must-gather:analyze` `[must-gather-path] [component]`** - Quick analysis of must-gather data - runs all analysis scripts and provides comprehensive cluster diagnostics
+- **`/must-gather:ovn-dbs` `[must-gather-path]`** - Analyze OVN databases from a must-gather using ovsdb-tool
 
 See [plugins/must-gather/README.md](plugins/must-gather/README.md) for detailed documentation.
 
@@ -137,10 +142,13 @@ OpenShift development utilities and helpers
 
 **Commands:**
 - **`/openshift:bump-deps` `<dependency> [version] [--create-jira] [--create-pr]`** - Bump dependencies in OpenShift projects with automated analysis and PR creation
+- **`/openshift:cluster-health-check` `"[--verbose] [--output-format]"`** - Perform comprehensive health check on OpenShift cluster and report issues
 - **`/openshift:create-cluster` `"[release-image] [platform] [options]"`** - Extract OpenShift installer from release image and create an OCP cluster
 - **`/openshift:destroy-cluster` `"[install-dir]"`** - Destroy an OpenShift cluster created by create-cluster command
+- **`/openshift:expand-test-case` `[test-idea-or-file-or-commands] [format]`** - Expand basic test ideas or existing oc commands into comprehensive test scenarios with edge cases in oc CLI or Ginkgo format
 - **`/openshift:new-e2e-test` `[test-specification]`** - Write and validate new OpenShift E2E tests using Ginkgo framework
 - **`/openshift:rebase` `<tag>`** - Rebase OpenShift fork of an upstream repository to a new upstream release.
+- **`/openshift:review-test-cases` `[file-path-or-test-code-or-commands]`** - Review test cases for completeness, quality, and best practices - accepts file path or direct oc commands/test code
 
 See [plugins/openshift/README.md](plugins/openshift/README.md) for detailed documentation.
 

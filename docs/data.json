@@ -74,6 +74,12 @@
       "version": "0.0.1",
       "commands": [
         {
+          "name": "create-release-note",
+          "description": "Generate bug fix release notes from Jira tickets and linked GitHub PRs",
+          "synopsis": "/jira:create-release-note <issue-key>",
+          "argument_hint": "<issue-key>"
+        },
+        {
           "name": "create",
           "description": "Create Jira issues (story, epic, feature, task, bug) with proper formatting",
           "synopsis": "/jira:create <type> [project-key] <summary> [options]",
@@ -126,6 +132,11 @@
           "description": "Implementation guide for creating Jira features representing strategic objectives and market problems"
         },
         {
+          "name": "Create Release Note",
+          "id": "create-release-note",
+          "description": "Detailed implementation guide for generating bug fix release notes from Jira and GitHub PRs"
+        },
+        {
           "name": "Create Jira Story",
           "id": "create-story",
           "description": "Implementation guide for creating well-formed Jira user stories with acceptance criteria"
@@ -154,16 +165,34 @@
       "version": "0.0.1",
       "commands": [
         {
+          "name": "add-debug-wait",
+          "description": "Add a wait step to a CI workflow for debugging test failures",
+          "synopsis": "/ci:add-debug-wait <workflow-or-job-name>",
+          "argument_hint": "<workflow-or-job-name>"
+        },
+        {
           "name": "ask-sippy",
           "description": "Ask the Sippy AI agent questions about OpenShift CI payloads, jobs, and test results",
           "synopsis": "/ask-sippy [question]",
           "argument_hint": "[question]"
         },
         {
+          "name": "list-unstable-tests",
+          "description": "List unstable tests with pass rate below 95%",
+          "synopsis": "/ci:list-unstable-tests <version> <keywords> [sippy-url]",
+          "argument_hint": "<version> <keywords> [sippy-url]"
+        },
+        {
           "name": "query-job-status",
           "description": "Query the status of a gangway job execution by ID",
           "synopsis": "/query-job-status <execution-id>",
           "argument_hint": "<execution-id>"
+        },
+        {
+          "name": "query-test-result",
+          "description": "Query test results from Sippy by version and test keywords",
+          "synopsis": "/ci:query-test-result <version> <keywords> [sippy-url]",
+          "argument_hint": "<version> <keywords> [sippy-url]"
         },
         {
           "name": "trigger-periodic",
@@ -442,6 +471,12 @@
           "argument_hint": "<dependency> [version] [--create-jira] [--create-pr]"
         },
         {
+          "name": "cluster-health-check",
+          "description": "Perform comprehensive health check on OpenShift cluster and report issues",
+          "synopsis": "/openshift:cluster-health-check [--verbose] [--output-format json|text]",
+          "argument_hint": "\"[--verbose] [--output-format]\""
+        },
+        {
           "name": "create-cluster",
           "description": "Extract OpenShift installer from release image and create an OCP cluster",
           "synopsis": "/openshift:create-cluster [release-image] [platform] [options]",
@@ -454,6 +489,12 @@
           "argument_hint": "\"[install-dir]\""
         },
         {
+          "name": "expand-test-case",
+          "description": "Expand basic test ideas or existing oc commands into comprehensive test scenarios with edge cases in oc CLI or Ginkgo format",
+          "synopsis": "/openshift:expand-test-case [test-idea-or-file-or-commands] [format]",
+          "argument_hint": "[test-idea-or-file-or-commands] [format]"
+        },
+        {
           "name": "new-e2e-test",
           "description": "Write and validate new OpenShift E2E tests using Ginkgo framework",
           "synopsis": "/new-e2e-test [test-specification]",
@@ -464,6 +505,12 @@
           "description": "Rebase OpenShift fork of an upstream repository to a new upstream release.",
           "synopsis": "/openshift:rebase [tag]",
           "argument_hint": "<tag>"
+        },
+        {
+          "name": "review-test-cases",
+          "description": "Review test cases for completeness, quality, and best practices - accepts file path or direct oc commands/test code",
+          "synopsis": "/openshift:review-test-cases [file-path-or-test-code-or-commands]",
+          "argument_hint": "[file-path-or-test-code-or-commands]"
         }
       ],
       "skills": [],
@@ -494,6 +541,12 @@
           "description": "Quick analysis of must-gather data - runs all analysis scripts and provides comprehensive cluster diagnostics",
           "synopsis": "/must-gather:analyze [must-gather-path] [component]",
           "argument_hint": "[must-gather-path] [component]"
+        },
+        {
+          "name": "ovn-dbs",
+          "description": "Analyze OVN databases from a must-gather using ovsdb-tool",
+          "synopsis": "/must-gather:ovn-dbs [must-gather-path] [--node <node-name>] [--query <json>]",
+          "argument_hint": "[must-gather-path]"
         }
       ],
       "skills": [
